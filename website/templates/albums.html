@@ -1,0 +1,16 @@
+{% extends "index.html" %}  {% block title %}
+albums {% endblock %} {% block content %}
+
+<div id="form1">
+        <form action=""  method="POST">
+            <input name="user" type="text" placeholder="Username" size="30" >
+            <input name="pass" type="password" placeholder="Password"  size="30" >
+            <input class="btn" type="submit" value="sign up" name="signup">
+        </form>
+</div>
+
+
+    <button type="button" id="add">ADD ALBUM</button>
+    <button type="submit" id="load" >LOAD ALBUM</button> 
+    <input type="number" id="enter"  min="0" max="5"/> 
+{% endblock %}
