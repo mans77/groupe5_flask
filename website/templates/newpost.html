@@ -1,7 +1,7 @@
 {% extends "index.html" %}  {% block title %}
 newpost{% endblock %} {% block content %}
 <div id="center">
-<form class="form">
+<form class="form" method="POST">
     <div class="form__image-box">
     
         <h1 class="form__image-box__heading">
@@ -15,13 +15,13 @@ newpost{% endblock %} {% block content %}
         <h3 class="form__fields__heading">
             TITLE
         </h3>
-        <input type="email" class="form-field text-field" />    
+        <input type="text" class="form-field text-field" name="title" />    
         <h3 class="form__fields__heading">
             BODY
         </h3>
 
-        <input type="password" class="form-field text-field" />    
-        <a href="#" class="btn">SUBMIT</a>
+        <input type="text" class="form-field text-field" name="body"/>    
+        <button type="submit" class="btn">SUBMIT</button>
 
     </div>
 </form>
