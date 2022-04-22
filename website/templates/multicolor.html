@@ -1,0 +1,38 @@
+{% extends "index.html" %}  {% block title %}
+posts {% endblock %} {% block content %}
+<div class="entier">
+    <button type="button" id="add">ADD POST</button>
+    <button type="submit" id="load" >LOAD POST</button> 
+    <input type="number" id="enter"  min="0" max="5"/> 
+</div>    
+    <br>
+    <div class="whole">
+        <div class="container">
+            <section class="sec_0">
+                <header class="title">Title</header>
+                <br>
+                <div class="box">
+                    <section class="blue b"></section>
+                    <section class="pink b"></section>
+                    <section class="green b"></section>
+                </div>
+                <button class="viewmore">VIEW<br>MORE</button>
+            </section>
+        </div>
+        <div class="container ctn">
+            <section class="sec_0">
+                <header class="title">Title</header>
+                <br>
+                <div class="box">
+                    <section class="blue b"></section>
+                    <section class="pink b"></section>
+                    <section class="green b"></section>
+                </div>
+                <button class="viewmore">VIEW<br>MORE</button>
+            </section>
+        </div>
+        <br>
+        <br>
+    </div>
+ 
+{% endblock %}
