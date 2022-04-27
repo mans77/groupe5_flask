@@ -1,27 +1,26 @@
-<div id="entete">
-    <div id="buttons">
-        <button id="add_user" class="bcont">ADD USER</button>
-        <button id="load_user" class="bcont">LOAD USER</button>
+{% extends "base.html" %}  {% block title %}
+newpost{% endblock %} {% block content %}
+<div id="center">
+<form class="form" method="POST">
+    <div class="form__image-box">
+    
+        <h1 class="form__image-box__heading">
+            CONNECT
+        </h1>
     </div>
-    <input type="number" name="" id="nombre">
+    <div class="form__fields">
+        <h3 class="form__fields__heading">
+            email
+        </h3>
+        <input type="text" class="form-field text-field" name="title" />    
+        <h3 class="form__fields__heading">
+            password
+        </h3>
+        <input type="password" class="form-field text-field" name="body"/>    
+        <button type="submit" class="btn">SUBMIT</button>
+    </div>
+</form>
 </div>
-<div id="adduser">
-    <div id="tete">CONNECT</div>
-    <div id="newuser">
+
     
-    <form id="formulaire" method="post">
-        <div class="part">
-            <label for="CON_EMAIL"><H3>EMAIL</H3></label>
-            <input id="CON_EMAIL" type="text">
-            <label for="CON_PASSWORD"><H3>PASSWORD</H3></label>
-            <input id="CON_PASSWORD" type="text">
-            
-        </div>  
-        
-        
-        
-    </form>
-    
-    </div>
-    <button type="submit" id="valider">LOGIN</button>
-</div>        
+{% endblock %}

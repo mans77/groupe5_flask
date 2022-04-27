@@ -113,55 +113,7 @@ color: white;
     align-content: space-between;
     width: 100%;
 }
-tr{
-    background-color: #4C8DD9;
-    width: 130%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 5px;
-    margin: 5px;
-}
-td{
-    background-color: white;
-    color: #4C8DD9;
-    font-size: xx-large;
-    border-radius: 5px;
-    margin: 3px;
-    width: auto;
-}
-#corps{
-    margin: 5%;
-    width: auto;
-}
-#ID{
-    text-align: center;
-    width: 3%;
-}
-#NAME{
-    text-align: center;
-    width: 10%;
-}
-#USERNAME{
-    text-align: center;
-    width: 13%;
-}
-#EMAIL{
-    text-align: center;
-    width: 20%;
-}
-#PHONE{
-    text-align: center;
-    width: 13%;
-}
-#WEBSITE{
-    text-align: center;
-    width: 20%;
-}
-#newuser{
-    display: flex;
-    flex-direction: column;
-}
+
 #tete{
     /* Rectangle 15 */
 
@@ -230,3 +182,4 @@ td{
     width: 160px;
     margin: 2%;
 }
+

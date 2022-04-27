@@ -1,61 +1,32 @@
-<div id="entete">
-    <div id="buttons">
-        <button id="add_user" class="bcont">ADD USER</button>
-        <button id="load_user" class="bcont">LOAD USER</button>
-    </div>
-    <input type="number" name="" id="nombre">
-</div>
-<div id="adduser">
-    <div id="tete">NEW USER</div>
-    <div id="newuser">
-    
-    <form id="formulaire" method="post">
-        <div class="part">
-            <h1>Informations personnelles</h1>
-            <label for="UNAME">NAME</label>
-            <input id="UNAME" type="text">
-            <label for="USERNAMEFORM">USERNAME</label>
-            <input id="USERNAMEFORM" type="text">
-            <label for="PASSWORDFORM">PASSWORD</label>
-            <input id="PASSWORDFORM" type="text">
-            <label for="EMAILFORM">EMAIL</label>
-            <input id="EMAILFORM" type="email">
-            <label for="PHONEFORM">PHONE</label>
-            <input id="PHONEFORM" type="number">
-            <label for="WEBSITEFORM">WEBSITE</label>
-            <input id="WEBSITEFORM" type="text">
-        </div>
-        <div class="part">
-            <h1>Address</h1>
+{% extends "base.html" %}  {% block title %}
+load {% endblock %} {% block content %}
 
-            <label for="STREET">STREET</label>
-            <input id="STREET" type="text">
-            <label for="SUITE">SUITE</label>
-            <input id="SUITE" type="text">
-            <label for="CITY">CITY</label>
-            <input id="CITY" type="text">
-            <label for="ZIPCODE">ZIPCODE</label>
-            <input id="ZIPCODE" type="number">
-            <label for="LAT">LAT</label>
-            <input id="LAT" type="number">
-            <label for="LON">LON</label>
-            <input id="LON" type="number">
-        </div>    
-        <div class="part">
-            <h1>Company</h1>
-
-            <label for="COMNAME">NAME</label>
-            <input id="COMNAME" type="text">
-            <label for="CATCHPHRASE">CATCHPHRASE</label>
-            <input id="CATCHPHRASE" type="text">
-            <label for="BS">BS</label>
-            <input id="BS" type="text">
-            
-        </div>
-        
-        
-    </form>
-    
+<form class="formx">
+    <div class="box_image">
+        <h1 class="form__image-box__heading">
+           New user
+        </h1>
     </div>
-    <button type="submit" id="valider">SUBMIT</button>
-</div>
+    <div class="form__fields">  
+        <input type="text" class="form-field text-field" placeholder="name" name="name"/>   
+        <input type="text" class="form-field text-field" placeholder="Username" name="Username"/>   
+        <input type="email" class="form-field text-field" placeholder="email" name="email"/>   
+        <input type="text" class="form-field text-field" placeholder="phone" name="phone"/>   
+        <input type="text" class="form-field text-field" placeholder="website" name="website"/>   
+        <input type="text" class="form-field text-field" placeholder="street" name="street"/>   
+        <input type="text" class="form-field text-field" placeholder="suite" name="suite"/>   
+        <input type="text" class="form-field text-field" placeholder="city"name="city"/>   
+        <input type="text" class="form-field text-field" placeholder="zipcode" name="zipcode"/>   
+        <input type="text" class="form-field text-field" placeholder="lng" name="lng"/>   
+        <input type="text" class="form-field text-field" placeholder="lat" name="lat"/>   
+        <input type="text" class="form-field text-field" placeholder="name company" name="compname"/> 
+        <input type="text" class="form-field text-field" placeholder="catchPhrase" name="catchPhrase"/>
+        <input type="text" class="form-field text-field" placeholder="bs" name="bs"/>         
+        <input type="submit"  class="bton" value="SUBMIT"/>
+    </div>
+</form>
+
+
+
+    
+{% endblock %}

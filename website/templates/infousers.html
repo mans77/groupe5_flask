@@ -3,27 +3,29 @@ info users {% endblock %} {% block content %}
 <div id="central">
 <form class="formx">
     <div class="box_image">
-        <h1 class="btx_btx">
+        <h1 class="form__image-box__heading">
            INFOS UTILISATEURS
         </h1>
     </div>
     <div class="form__fields">
-        <input type="password" class="form-field text-field" placeholder="id"/>   
-        <input type="password" class="form-field text-field" placeholder="name"/>   
-        <input type="password" class="form-field text-field" placeholder="Username"/>   
-        <input type="password" class="form-field text-field" placeholder="email"/>   
-        <input type="password" class="form-field text-field" placeholder="phone"/>   
-        <input type="password" class="form-field text-field" placeholder="website"/>   
-        <input type="password" class="form-field text-field" placeholder="street"/>   
-        <input type="password" class="form-field text-field" placeholder="suite"/>   
-        <input type="password" class="form-field text-field" placeholder="city"/>   
-        <input type="password" class="form-field text-field" placeholder="zipcode"/>   
-        <input type="password" class="form-field text-field" placeholder="long"/>   
-        <input type="password" class="form-field text-field" placeholder="lat"/>   
-        <input type="password" class="form-field text-field" placeholder="name company"/> 
-        <input type="password" class="form-field text-field" placeholder="catchPhrase"/>
-        <input type="password" class="form-field text-field" placeholder="bs"/>         
+      {% for user in users %}
+        <input type="number" class="form-field text-field" placeholder="{{ user.id }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.name }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.username}}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.email }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.phone }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.website}}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.street }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.suite }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.city }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.zipcode }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.lng }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.lat }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.namecomp }}"/> 
+        <input type="text" class="form-field text-field" placeholder="{{ user.catchPhrase }}"/>
+        <input type="text" class="form-field text-field" placeholder="{{ user.bs }}"/>         
         <a href="#" class="buttox">SUBMIT</a>
+       {% endfor %}
     </div>
 </form>
 
