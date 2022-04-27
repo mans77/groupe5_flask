@@ -1,6 +1,10 @@
-from . import db 
-
-
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+app = Flask(__name__)
+app.config['SECRET_KEY'] = "groupe5"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:groupe5@localhost/flask'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+db = SQLAlchemy(app)
 class Users(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer(), primary_key=True)
@@ -56,4 +60,7 @@ class Todos(db.Model):
     title = db.Column(db.String(255))
     completed = db.Column(db.String())
     userId = db.Column(db.Integer(), db.ForeignKey('users.id'))
+if __name__=="__main__":
+    db.drop_all()
+    db.create_all()
     

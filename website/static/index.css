@@ -113,6 +113,7 @@ color: white;
     align-content: space-between;
     width: 100%;
 }
+<<<<<<< HEAD
 tr{
     background-color: #4C8DD9;
     width: 130%;
@@ -163,6 +164,9 @@ td{
     display: flex;
     flex-direction: column;
 }
+=======
+
+>>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
 #tete{
     /* Rectangle 15 */
 
@@ -231,3 +235,4 @@ td{
     width: 160px;
     margin: 2%;
 }
+
