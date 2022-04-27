@@ -23,13 +23,20 @@ def albums():
 @auth.route("/todos")
 def todos():
    
-<<<<<<< HEAD
+
     return  render_template("todos.html")
-=======
-    return  render_template("todoss.html")
->>>>>>> 1fc9ef78fd17d98cd880183b0251fce3db728139
+
 
 @auth.route("/infos")
 def infos():
    
     return render_template("infos.html")
+
+@auth.route("/home")
+def home():
+    return render_template("home.html")
+
+@auth.route("/formul")  
+def formulaire_user():
+    return render_template("formulaire_user.html")  
+        

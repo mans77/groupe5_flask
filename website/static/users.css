@@ -412,7 +412,6 @@ background-color: #ad5389;
 color: white;
 font-family: "Poppins", sans-serif; }
 
-<<<<<<< HEAD
 /* BA's JOB */
 
 .container{
@@ -639,7 +638,7 @@ textarea{
     left: 44em;
     top: 11em;
 }
-=======
+
 .pagination {
     display: flex;
     align-items: center;
@@ -866,4 +865,5 @@ transition: all 2s;
 font-size: 1.55rem;
 color: #9d9d9d; }
 
->>>>>>> 1fc9ef78fd17d98cd880183b0251fce3db728139
+
+
