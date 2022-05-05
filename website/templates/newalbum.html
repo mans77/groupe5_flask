@@ -1,7 +1,7 @@
 {% extends "index.html" %}  {% block title %}
 newalbum{% endblock %} {% block content %}
 <div id="center">
-<form class="form">
+<form class="form" action="/addalbum" method="POST">
     <div class="form__image-box">
         <h1 class="form__image-box__heading">
             NOUVEAU ALBUM
@@ -11,8 +11,9 @@ newalbum{% endblock %} {% block content %}
         <h3 class="form__fields__heading">
             TITLE
         </h3>
-        <input type="text" class="form-field text-field", name="title" />    
-        <a href="#" class="bton">SUBMIT</a>
+        <input type="text" class="form-field text-field", name="title" />  
+         
+        <input type="submit" class="bton" value="SUBMIT" />
     </div>
 </form>
 </div>

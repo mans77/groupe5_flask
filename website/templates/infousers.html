@@ -21,8 +21,8 @@ info users {% endblock %} {% block content %}
         <input type="text" class="form-field text-field" placeholder="{{ user.zipcode }}"/>   
         <input type="text" class="form-field text-field" placeholder="{{ user.lng }}"/>   
         <input type="text" class="form-field text-field" placeholder="{{ user.lat }}"/>   
-        <input type="text" class="form-field text-field" placeholder="{{ user.namecomp }}"/> 
-        <input type="text" class="form-field text-field" placeholder="{{ user.catchPhrase }}"/>
+        <input type="text" class="form-field text-field" placeholder="{{ user.name_company }}"/> 
+        <input type="text" class="form-field text-field" placeholder="{{ user.catchPrase }}"/>
         <input type="text" class="form-field text-field" placeholder="{{ user.bs }}"/>         
         <a href="#" class="buttox">SUBMIT</a>
        {% endfor %}
@@ -30,6 +30,6 @@ info users {% endblock %} {% block content %}
 </form>
 
 </div>
-<iframe class="map" , src="/map" width="800" height="700"  float="right"></iframe>
+<iframe class="map" , src="../map" width="800" height="700"  float="right"></iframe>
     
 {% endblock %}

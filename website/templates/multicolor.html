@@ -8,31 +8,22 @@ posts {% endblock %} {% block content %}
     <br>
     <div class="whole">
         <div class="container">
+            {% for album in albums %}
             <section class="sec_0">
                 <header class="title">Title</header>
                 <br>
+            {% endfor %}
+            {% for photo in photos%}
                 <div class="box">
-                    <section class="blue b"></section>
-                    <section class="pink b"></section>
-                    <section class="green b"></section>
+                    <section class="blue b">{{ photo.url}}</section>
+    
                 </div>
+            {% endfor %}
                 <button class="viewmore">VIEW<br>MORE</button>
             </section>
+           
         </div>
-        <div class="container ctn">
-            <section class="sec_0">
-                <header class="title">Title</header>
-                <br>
-                <div class="box">
-                    <section class="blue b"></section>
-                    <section class="pink b"></section>
-                    <section class="green b"></section>
-                </div>
-                <button class="viewmore">VIEW<br>MORE</button>
-            </section>
-        </div>
-        <br>
-        <br>
+    
     </div>
  
 {% endblock %}

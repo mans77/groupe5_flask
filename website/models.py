@@ -5,25 +5,28 @@ app.config['SECRET_KEY'] = "groupe5"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:groupe5@localhost/flask'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
+db.init_app(app)
+
 class Users(db.Model):
     __tablename__ = 'users'
-    id = db.Column(db.Integer(), primary_key=True)
-    name = db.Column(db.String(50))
-    username = db.Column(db.String(255))
-    email = db.Column(db.String(255),  unique =True)
-    password = db.Column(db.String(25), nullable=False)
-    phone = db.Column(db.String(255))
-    website = db.Column(db.String(255))
-    street  = db.Column(db.String(255))
-    suite = db.Column(db.String(255))
-    city = db.Column(db.String(255))
-    zipcode = db.Column(db.String(255))
-    lng = db.Column(db.String(255))
-    lat = db.Column(db.String(255))
-    name_company = db.Column(db.String(255))
-    catchPrase = db.Column(db.String(255))
-    bs = db.Column(db.String(255))
-    
+    id          = db.Column(db.Integer(), primary_key=True)
+    name        = db.Column(db.String(50))
+    username    = db.Column(db.String(255))
+    email       = db.Column(db.String(255),  unique =True)
+    password    = db.Column(db.String(25), nullable=False)
+    phone       = db.Column(db.String(255))
+    website     = db.Column(db.String(255))
+    street      = db.Column(db.String(255))
+    suite       = db.Column(db.String(255))
+    city        = db.Column(db.String(255))
+    zipcode     = db.Column(db.String(255))
+    lng         = db.Column(db.String(255))
+    lat         = db.Column(db.String(255))
+    name_company= db.Column(db.String(255))
+    catchPrase  = db.Column(db.String(255))
+    bs          = db.Column(db.String(255))
+
+
 class Albums(db.Model):
     __tablename__ = 'albums'
     id = db.Column(db.Integer(), primary_key=True)
