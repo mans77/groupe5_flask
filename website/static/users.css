@@ -413,7 +413,10 @@ background-color: #ad5389;
 color: white;
 font-family: "Poppins", sans-serif; }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
 /* BA's JOB */
 
 .container{
@@ -872,6 +875,10 @@ color: #9d9d9d; }
     align-items: center;
 }
 
+<<<<<<< HEAD
+
+
+=======
 .tab1{
     position: relative;
     display: flex;
@@ -902,3 +909,4 @@ td{
         width: auto;
         padding: 1em;
     }    
+>>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
