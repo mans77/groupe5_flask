@@ -344,6 +344,11 @@ def albums():
 
 @auth.route("/todos")
 def todos():
+<<<<<<< HEAD
+   
+
+    return  render_template("todos.html")
+=======
     if  request.method == "POST":
           title = request.form.get('title')
           completed = request.form.get('completed')
@@ -355,9 +360,14 @@ def todos():
           db.session.commit()
           flash("album added ", category="success")
           
+<<<<<<< HEAD
     return render_template("todos.html")
 
 
+=======
+    return render_template("album.html")
+>>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
+>>>>>>> 0ba9c6dc0f34e5db62201b41940b927848273f27
 
 
 
@@ -366,6 +376,16 @@ def infos():
       
     return redirect(url_for("auth.infousers"))
 
+<<<<<<< HEAD
+@auth.route("/home")
+def home():
+    return render_template("home.html")
+
+@auth.route("/formul")  
+def formulaire_user():
+    return render_template("formulaire_user.html")  
+        
+=======
 
 
 
@@ -583,3 +603,4 @@ def loadalbum():
     return render_template("multicolor.html", albums = albums)
 
 
+>>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
