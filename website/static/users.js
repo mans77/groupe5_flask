@@ -29,6 +29,11 @@ $("document").ready(function(){
       window.location.href = "http://127.0.0.1:5000/loadalbum";  
     });
   });
+  $("document").ready(function(){
+    $("#logout").on("click",function(){ 
+      window.location.href = "http://127.0.0.1:5000/";  
+    });
+  });
   $("li:gt(2)").hide();
 
   $(".show-more a").on("click", function() {
@@ -39,3 +44,10 @@ $("document").ready(function(){
         $(this).html("Show more");    
       }
   });
+
+  function openForm() {
+    document.getElementById("popupForm").style.display = "block";
+  }
+  function closeForm() {
+    document.getElementById("popupForm").style.display = "none";
+  }

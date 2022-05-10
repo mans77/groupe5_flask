@@ -1,26 +1,57 @@
 {% extends "index.html" %}  {% block title %}
 albums {% endblock %} {% block content %}
-    <div class="contentpost">
-        <div class="generale">
+<div class="contentpost">
+       
+    <div class="generale">
+        {% for post in posts %}
         <div id="post">
-            {% for post in posts %}
-            <h2>{{post.title}}</h2>
-            <p>{{post.body}}</p>
-            {% endfor%}
+           
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.body }}
+                <a href="" onclick="openForm()" style="float:left" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit">Edit</a>
+                <a href=""  style="float:right" class="btn btn-danger btn-xs" data-toggle="modal" onclick="return confirm('are you sure')">Delete</a>
+              </p>
             <ul>
-                <li>Ipsum</li>
+                <li>Ipsum </li>
             </ul>
             <div class="show-more">
             <a href="#">comments</a>
             </div> 
+
+            
+
         </div>
-       </div>
+        {% endfor %}
+    </div>  
  </div>
+
+ <div class="loginPopup">
+  <div class="formPopup" id="popupForm">
+    <form action="" class="formContainer">
+      <h2>Update</h2>
+      <label for="title">
+        <strong>title</strong>
+      </label>
+      <input type="text" id="title" placeholder="title" name="title">
+      <label for="body">
+        <strong>body</strong>
+      </label>
+      <input type="text" id="body" placeholder="body" name="body">
+      <button type="submit" class="btn">submit</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+</div>
+
+
  <div id="pagin">
     <ul class="pagination">
         <li class="ha">PREV</li>
         <li class="ha">PAGE</li>
         <li class="ha">NEXT</li>
     </ul>
+</div>
+
+
 </div>
 {% endblock %}

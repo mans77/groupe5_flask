@@ -10,7 +10,7 @@ posts {% endblock %} {% block content %}
         <div class="container">
             {% for album in albums %}
             <section class="sec_0">
-                <header class="title">Title</header>
+                <header class="title">{{ album.title }}</header>
                 <br>
             {% endfor %}
             {% for photo in photos%}

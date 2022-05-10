@@ -39,6 +39,7 @@ a:hover{
 #posts{
 
 /* Rectangle 2 */
+text-decoration: none;
 position: absolute;
 left: 20px;
 top: 29px;
@@ -65,6 +66,7 @@ text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 #albums{
 
 /* Rectangle 2 */
+text-decoration: none;
 position: absolute;
 left: 150px;
 top: 29px;
@@ -90,6 +92,7 @@ text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 #todos{
 
 /* Rectangle 2 */
+text-decoration: none;
 position: absolute;
 left: 280px;
 top: 29px;
@@ -115,6 +118,7 @@ text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 #infos{
 
 /* Rectangle 2 */
+text-decoration: none;
 position: absolute;
 left: 410px;
 top:29px;
@@ -137,6 +141,32 @@ color: #3C73A5;
 text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
+#logout{
+
+    /* Rectangle 2 */
+    text-decoration: none;
+    position: absolute;
+    left: 580px;
+    top:29px;
+    width: 115px;
+    height: 40px;
+    background: #FFFFFF;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #3C73A5;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    }
 #add{
     /* BUTTON ADD */
 
@@ -414,10 +444,6 @@ background-color: #ad5389;
 color: white;
 font-family: "Poppins", sans-serif; }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
 /* BA's JOB */
 
 .container{
@@ -886,10 +912,6 @@ color: #9d9d9d; }
     align-items: center;
 }
 
-<<<<<<< HEAD
-
-
-=======
 .tab1{
     position: relative;
     display: flex;
@@ -901,7 +923,7 @@ color: #9d9d9d; }
    
     border-top-width: 0.3em;
     border-bottom-width: 0.3em;
-    margin-left: 35%;
+    margin-left: 25%;
     border-radius: 0.8em;
 }   
 tr{ 
@@ -909,7 +931,7 @@ tr{
     border: 1em solid #3C73A5;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     background-color: #4C8DD9;
     margin: 5px;
 }
@@ -921,7 +943,6 @@ td{
         margin: 3px;
         width: auto;
         padding: 1em;
-<<<<<<< HEAD
     }  
 .contentpost{
     display: flex;
@@ -931,19 +952,23 @@ td{
     margin: 10px 300px 100px 250px;
 }  
 .generale{
-    margin: 70px;
+    /* margin: 70px; */
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    /* align-items: center;
     justify-content: center;
     width: 600px;
-    height: 250px;
-}
+    height: 250px;*/
+} 
 #post{
     border: 1px solid black;
     width: 417px;
     margin: 30px;
     height: 345px;
     display: flex;
+    background-color: steelblue;
+    box-shadow: black;
+    border-radius: 15px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -973,11 +998,9 @@ td{
     width:400px;
     height:25px;
     border-radius: 10px;
-    text-decoration: none;
+    list-style-type: none;
 }
-#post ul li{
-    text-decoration: none;
-}
+
 #post .show-more{
     background: #FFFFFF;
     text-align: center;
@@ -986,7 +1009,68 @@ td{
     height:25px;
     border-radius: 10px;
 }
-=======
-    }    
->>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
->>>>>>> 0ba9c6dc0f34e5db62201b41940b927848273f27
+  
+
+
+.openBtn {
+    display: flex;
+    justify-content: left;
+  }
+  .openButton {
+    border: none;
+    border-radius: 5px;
+    background-color: #1c87c9;
+    color: white;
+    padding: 14px 20px;
+    cursor: pointer;
+    position: fixed;
+  }
+  .loginPopup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .formPopup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+  }
+  .formContainer {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .formContainer input[type=text],
+  .formContainer input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+  }
+  .formContainer input[type=text]:focus,
+  .formContainer input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  .formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+  }
+  .formContainer .cancel {
+    background-color: #cc0000;
+  }
+  .formContainer .btn:hover,
+  .openButton:hover {
+    opacity: 1;
+  }

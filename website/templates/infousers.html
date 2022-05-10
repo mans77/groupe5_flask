@@ -9,7 +9,7 @@ info users {% endblock %} {% block content %}
     </div>
     <div class="form__fields">
       {% for user in users %}
-        <input type="number" class="form-field text-field" placeholder="{{ user.id }}"/>   
+        <input type="text" class="form-field text-field" placeholder="{{ user.id }}"/>   
         <input type="text" class="form-field text-field" placeholder="{{ user.name }}"/>   
         <input type="text" class="form-field text-field" placeholder="{{ user.username}}"/>   
         <input type="text" class="form-field text-field" placeholder="{{ user.email }}"/>   
@@ -24,7 +24,7 @@ info users {% endblock %} {% block content %}
         <input type="text" class="form-field text-field" placeholder="{{ user.name_company }}"/> 
         <input type="text" class="form-field text-field" placeholder="{{ user.catchPrase }}"/>
         <input type="text" class="form-field text-field" placeholder="{{ user.bs }}"/>         
-        <a href="#" class="buttox">SUBMIT</a>
+      
        {% endfor %}
     </div>
 </form>

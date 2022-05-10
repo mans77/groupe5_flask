@@ -3,7 +3,6 @@ from unicodedata import category
 from flask import Blueprint,render_template, request,flash, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import  login_user, login_required,logout_user, current_user
-from matplotlib.pyplot import title
 # from . import db
 from .models import *
 from .models import db
@@ -19,8 +18,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 # db = SQLAlchemy()
 
 auth = Blueprint('auth', __name__)
+
 def selectposts(end, nbr):
-    vide = Users.query.all()
+    vide = Posts.query.all()
     api = get("https://jsonplaceholder.typicode.com/" + end)
     data = api.json()
     if len(vide) == 0:
@@ -28,11 +28,12 @@ def selectposts(end, nbr):
             ecart = len(data)
         else:
             ecart = nbr
-            
+                
         for i in range(ecart):
             posts = Posts(title = data[i].get("title"),
             body = data[i].get("body"),
             userId = data[i].get("userId"))
+        
             try:
                 db.session.add(posts)
                 db.session.commit()
@@ -40,11 +41,11 @@ def selectposts(end, nbr):
                 db.session.rollback()
                 return "error"
     else:
-        id_user = Users.query.all()
+        id_user = Posts.query.all()
         id_list = {0}
         for i in range(len(id_user)):
            id_list.add(id_user[i].id)
-        nextStep = len(Users.query.all())
+        nextStep = len(Posts.query.all())
         if nbr  >  nextStep:
             if nextStep + nbr < len(data):
                 endIndex = nextStep + nbr
@@ -67,7 +68,7 @@ def selectposts(end, nbr):
 
 
 def selectalbums(end, nbr):
-    vide = Users.query.all()
+    vide = Albums.query.all()
     api = get("https://jsonplaceholder.typicode.com/" + end)
     data = api.json()
     if len(vide) == 0:
@@ -86,11 +87,11 @@ def selectalbums(end, nbr):
                 db.session.rollback()
                 return "error"
     else:
-        id_user = Users.query.all()
+        id_user = Albums.query.all()
         id_list = {0}
         for i in range(len(id_user)):
            id_list.add(id_user[i].id)
-        nextStep = len(Users.query.all())
+        nextStep = len(Albums.query.all())
         if nbr  >  nextStep:
             if nextStep + nbr < len(data):
                 endIndex = nextStep + nbr
@@ -111,7 +112,7 @@ def selectalbums(end, nbr):
 
 
 def selectphotos(end, nbr):
-    vide = Users.query.all()
+    vide = Photos.query.all()
     api = get("https://jsonplaceholder.typicode.com/" + end)
     data = api.json()
     if len(vide) == 0:
@@ -130,11 +131,11 @@ def selectphotos(end, nbr):
                 db.session.rollback()
                 return "error"
     else:
-        id_user = Users.query.all()
+        id_user = Photos.query.all()
         id_list = {0}
         for i in range(len(id_user)):
            id_list.add(id_user[i].id)
-        nextStep = len(Users.query.all())
+        nextStep = len(Photos.query.all())
         if nbr  >  nextStep:
             if nextStep + nbr < len(data):
                 endIndex = nextStep + nbr
@@ -156,7 +157,7 @@ def selectphotos(end, nbr):
 
 
 def selectcomments(end, nbr):
-    vide = Users.query.all()
+    vide = Comments.query.all()
     api = get("https://jsonplaceholder.typicode.com/" + end)
     data = api.json()
     if len(vide) == 0:
@@ -175,11 +176,11 @@ def selectcomments(end, nbr):
                 db.session.rollback()
                 return "error"
     else:
-        id_user = Users.query.all()
+        id_user = Comments.query.all()
         id_list = {0}
         for i in range(len(id_user)):
            id_list.add(id_user[i].id)
-        nextStep = len(Users.query.all())
+        nextStep = len(Comments.query.all())
         if nbr  >  nextStep:
             if nextStep + nbr < len(data):
                 endIndex = nextStep + nbr
@@ -200,10 +201,9 @@ def selectcomments(end, nbr):
 
 
 def selectodos(end, nbr):
-    vide = Users.query.all()
+    vide = Todos.query.all()
     api = get("https://jsonplaceholder.typicode.com/" + end)
     data = api.json()
-    password = "groupe5"
     if len(vide) == 0:
         if nbr > len(data):
             ecart = len(data)
@@ -220,11 +220,11 @@ def selectodos(end, nbr):
                 db.session.rollback()
                 return "error"
     else:
-        id_user = Users.query.all()
+        id_user = Todos.query.all()
         id_list = {0}
         for i in range(len(id_user)):
            id_list.add(id_user[i].id)
-        nextStep = len(Users.query.all())
+        nextStep = len(Todos.query.all())
         if nbr  >  nextStep:
             if nextStep + nbr < len(data):
                 endIndex = nextStep + nbr
@@ -344,11 +344,8 @@ def albums():
 
 @auth.route("/todos")
 def todos():
-<<<<<<< HEAD
-   
 
-    return  render_template("todos.html")
-=======
+
     if  request.method == "POST":
           title = request.form.get('title')
           completed = request.form.get('completed')
@@ -358,34 +355,19 @@ def todos():
           add_album = Todos(title = title, completed = completed)
           db.session.add(add_album)
           db.session.commit()
-          flash("album added ", category="success")
+          flash("added ", category="success")
           
-<<<<<<< HEAD
+
     return render_template("todos.html")
 
 
-=======
-    return render_template("album.html")
->>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
->>>>>>> 0ba9c6dc0f34e5db62201b41940b927848273f27
 
 
-
-@auth.route("/infos", methods = ["GET"])
+@auth.route("/infos", methods = ["GET","POST"])
 def infos():
       
     return redirect(url_for("auth.infousers"))
 
-<<<<<<< HEAD
-@auth.route("/home")
-def home():
-    return render_template("home.html")
-
-@auth.route("/formul")  
-def formulaire_user():
-    return render_template("formulaire_user.html")  
-        
-=======
 
 
 
@@ -421,7 +403,6 @@ def infousers():
 
 @auth.route('/map')
 def map():
-
     return render_template('map.html')
 
 
@@ -432,7 +413,7 @@ def map():
 def photos():
     init = 0
     nbr = 6
-    selectapi("photos", nbr)
+    selectphotos("photos", nbr)
     photos = Photos.query.all()[init:nbr]
    
     return render_template("infos.html", photos = photos)
@@ -503,10 +484,10 @@ def newuser():
 @auth.route("/load", methods = ["POST","GET"])
 def load():
     nnr = 0
-   
     nbr = request.args.get("nbr")
     selectapi("users", int(nbr))
     users = Users.query.all()[nnr:int(nbr)]
+    
     # for user in users:
 
     #     id  = user.id
@@ -522,15 +503,14 @@ def load():
 
 
 
-@auth.route('/loadpost')
+@auth.route('/loadpost', methods = ["GET","POST"])
 def loadpost():
     init = 0
-   
-    nbr = request.args.get("nbpost")
-    print(nbr)
-    selectposts("posts", int(nbr))
-    users = Users.query.all()[init:int(nbr)]
-    return render_template("loadpost.html", users = users)
+    nbpost = request.args.get("nbpost")
+    selectposts("posts", int(nbpost))
+    posts = Posts.query.all()[init:int(nbpost)]
+    print(posts)
+    return render_template("loadpost.html", posts = posts)
 
 
 
@@ -603,4 +583,4 @@ def loadalbum():
     return render_template("multicolor.html", albums = albums)
 
 
->>>>>>> b1094e64d0642807e89d97cba98a20c3080c4f70
+

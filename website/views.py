@@ -10,7 +10,7 @@ views = Blueprint("views", __name__)
 
 @views.route("/", methods=["GET","POST"])
 def home():
-     nnr = 0
+    
      if request.method == "POST":
           nbr = request.form.get("nbre")  
           selectapi("users", int(nbr))
