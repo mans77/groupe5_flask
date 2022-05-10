@@ -1,28 +1,23 @@
 {% extends "index.html" %}  {% block title %}
-newpost{% endblock %} {% block content %}
+newalbum{% endblock %} {% block content %}
 <div id="center">
-<form action="/newpost" class="form" method="POST">
+<form class="form" action="/addtodos" method="POST">
     <div class="form__image-box">
-    
         <h1 class="form__image-box__heading">
-            ADD POST
-        
+            ADD TODOS
         </h1>
     </div>
-
     <div class="form__fields">
-        
         <h3 class="form__fields__heading">
             TITLE
         </h3>
-        <input type="text" class="form-field text-field" name="title" />    
+        <input type="text" class="form-field text-field", name="title" />  
         <h3 class="form__fields__heading">
-            BODY
+            COMPLETED
         </h3>
-
-        <input type="text" class="form-field text-field" name="body"/>    
-        <button type="submit" class="btn">SUBMIT</button>
-
+        <input type="text" class="form-field text-field", name="completed" />  
+         
+        <input type="submit" class="btn" value="SUBMIT" />
     </div>
 </form>
 </div>
